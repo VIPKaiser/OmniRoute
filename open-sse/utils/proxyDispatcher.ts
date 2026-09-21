@@ -491,6 +491,11 @@ export function __getDefaultDispatcherOptionsForTest(
   return getDefaultDispatcherOptions(env);
 }
 
+/** Test-only accessor for the hostname-branched dispatcher options (local-egress shortening). */
+export function __getDispatcherOptionsForTest(hostname?: string) {
+  return getDispatcherOptions(hostname);
+}
+
 export function __createRoundRobinDispatcherForTest(dispatchers: Dispatcher[]): Dispatcher {
   return createRoundRobinDispatcher(dispatchers);
 }
